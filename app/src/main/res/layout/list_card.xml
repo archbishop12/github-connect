@@ -35,13 +35,13 @@
                 android:layout_height="match_parent">
 
                 <TextView
-                    android:id="@+id/username"
+                    android:id="@+id/user_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="28dp"
-                    android:text="@username" />
+                    android:text="username" />
 
                 <ImageView
                     android:id="@+id/profile_image"
@@ -59,10 +59,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"
-                    android:layout_alignStart="@+id/username"
+                    android:layout_alignStart="@+id/user_name"
                     android:layout_marginBottom="26dp"
                     android:text="Names"
-                    android:layout_alignLeft="@+id/username" />
+                    android:layout_alignLeft="@+id/user_name" />
 
                 <ImageView
                     android:id="@+id/imageView4"
