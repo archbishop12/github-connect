@@ -1,7 +1,9 @@
-package com.example.wagubibrian.github_connect;
+package com.example.wagubibrian.github_connect.view;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.example.wagubibrian.github_connect.R;
 
 public class DetailActivity extends AppCompatActivity {
 
