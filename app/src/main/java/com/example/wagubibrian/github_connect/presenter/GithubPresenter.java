@@ -20,7 +20,6 @@ public class GithubPresenter {
     public void getGithubUsers(final MainActivity activity){
 
 
-
         Call<GithubUsersResponse> call = githubService.getGithubUsers();
         call.enqueue(new Callback<GithubUsersResponse>() {
             @Override

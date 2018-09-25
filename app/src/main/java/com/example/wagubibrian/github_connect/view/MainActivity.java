@@ -5,7 +5,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.widget.Button;
 
 import com.example.wagubibrian.github_connect.R;
 import com.example.wagubibrian.github_connect.adapter.GithubUsersAdapter;
@@ -22,7 +21,6 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView.LayoutManager mLayoutManager;
     public final static String LIST_STATE_KEY = "recycler_state_list";
     Parcelable listState;
-    private Button testButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
