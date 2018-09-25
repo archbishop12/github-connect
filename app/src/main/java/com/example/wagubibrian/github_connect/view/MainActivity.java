@@ -12,7 +12,6 @@ import android.widget.Button;
 import com.example.wagubibrian.github_connect.R;
 import com.example.wagubibrian.github_connect.model.GithubUsers;
 import com.example.wagubibrian.github_connect.presenter.GithubPresenter;
-
 import java.util.List;
 
 
