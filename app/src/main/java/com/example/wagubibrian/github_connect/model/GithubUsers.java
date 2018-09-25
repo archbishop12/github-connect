@@ -15,11 +15,11 @@ public class GithubUsers {
     @SerializedName("html_url")
     private String htmlUrl;
 
-    public GithubUsers(String userName, String profileImagemage, String email, String htmlUrl) {
-        this.userName = userName;
-        this.profileImage = profileImage;
-        this.email = email;
-        this.htmlUrl = htmlUrl;
+    public GithubUsers(String userNameValue, String profileImageValue, String emailValue, String htmlUrlValue) {
+        this.userName = userNameValue;
+        this.profileImage = profileImageValue;
+        this.email = emailValue;
+        this.htmlUrl = htmlUrlValue;
     }
 
     public String getUserName() {
