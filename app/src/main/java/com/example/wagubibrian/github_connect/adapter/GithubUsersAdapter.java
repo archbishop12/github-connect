@@ -71,7 +71,6 @@ public class GithubUsersAdapter extends RecyclerView.Adapter<GithubUsersAdapter.
                     context.startActivity(launchDetail);
                 }
             });
-
         }
     }
 }
