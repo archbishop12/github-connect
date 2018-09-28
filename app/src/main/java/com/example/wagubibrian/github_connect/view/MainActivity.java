@@ -10,6 +10,10 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.wagubibrian.github_connect.R;
+import com.example.wagubibrian.github_connect.model.GithubUsers;
+import com.example.wagubibrian.github_connect.presenter.GithubPresenter;
+
+import java.util.List;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -33,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
 
+        GithubPresenter githubPresenter = new GithubPresenter();
+        githubPresenter.getGithubUsers(MainActivity.this);
         testButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -42,7 +48,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
-
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
@@ -65,5 +70,8 @@ public class MainActivity extends AppCompatActivity {
         if (listState != null) {
             mLayoutManager.onRestoreInstanceState(listState);
         }
+    }
+
+    public void populateRecyclerView(List<GithubUsers> githubUsers){
     }
 }

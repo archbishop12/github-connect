@@ -6,6 +6,6 @@ import retrofit2.Call;
 import retrofit2.http.GET;
 
 public interface GithubApi{
-    @GET("/users?q=location:uganda+language:java")
+    @GET("search/users?q=location:uganda+language:java")
     Call<GithubUsersResponse> getGithubUsers();
 }
