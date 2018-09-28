@@ -1,18 +1,18 @@
 package com.example.wagubibrian.github_connect.view;
 
-import android.content.Intent;
 import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.View;
 import android.widget.Button;
 
 import com.example.wagubibrian.github_connect.R;
+import com.example.wagubibrian.github_connect.adapter.GithubUsersAdapter;
 import com.example.wagubibrian.github_connect.model.GithubUsers;
 import com.example.wagubibrian.github_connect.presenter.GithubPresenter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -29,9 +29,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.github_list);
 
-        testButton = (Button)findViewById(R.id.launch_activity);
-        mRecyclerView = (RecyclerView)findViewById(R.id.github_list);
-
+        mRecyclerView = (RecyclerView)findViewById(R.id.recycler_view);
         mRecyclerView.setHasFixedSize(true);
 
         mLayoutManager = new LinearLayoutManager(this);
@@ -39,13 +37,6 @@ public class MainActivity extends AppCompatActivity {
 
         GithubPresenter githubPresenter = new GithubPresenter();
         githubPresenter.getGithubUsers(MainActivity.this);
-        testButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent launchDetail = new Intent(MainActivity.this, DetailActivity.class);
-                startActivity(launchDetail);
-            }
-        });
 
     }
 
@@ -73,5 +64,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void populateRecyclerView(List<GithubUsers> githubUsers){
+
+        mLayoutManager = new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false);
+
+        GithubUsersAdapter githubUsersAdapter = new GithubUsersAdapter(getApplicationContext(), (ArrayList<GithubUsers>) githubUsers);
+        mRecyclerView.setAdapter(githubUsersAdapter);
+        mRecyclerView.setLayoutManager(mLayoutManager);
+
+        githubUsersAdapter.notifyDataSetChanged();
+
     }
 }

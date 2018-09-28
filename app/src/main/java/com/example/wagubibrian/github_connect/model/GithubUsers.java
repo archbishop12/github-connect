@@ -18,6 +18,9 @@ public class GithubUsers implements Parcelable{
     @SerializedName("html_url")
     private String htmlUrl;
 
+    @SerializedName("company")
+    private String company;
+
     public static final Parcelable.Creator CREATOR = new Parcelable.Creator() {
 
         @Override
@@ -31,11 +34,13 @@ public class GithubUsers implements Parcelable{
         }
     };
 
-    public GithubUsers(String userNameValue, String profileImageValue, String emailValue, String htmlUrlValue) {
-        this.userName = userNameValue;
-        this.profileImage = profileImageValue;
-        this.email = emailValue;
-        this.htmlUrl = htmlUrlValue;
+    public GithubUsers(String userName, String profileImage, String email, String htmlUrl, String company) {
+
+        this.userName = userName;
+        this.profileImage = profileImage;
+        this.email = email;
+        this.htmlUrl = htmlUrl;
+        this.company = company;
     }
 
     public GithubUsers(Parcel source) {
@@ -77,6 +82,13 @@ public class GithubUsers implements Parcelable{
         this.htmlUrl = htmlUrl;
     }
 
+    public String getCompany() {
+        return company;
+    }
+
+    public void setCompany(String company) {
+        this.company = company;
+    }
 
     @Override
     public int describeContents() {
@@ -90,4 +102,6 @@ public class GithubUsers implements Parcelable{
         dest.writeString(this.email);
         dest.writeString(this.htmlUrl);
     }
+
+
 }
