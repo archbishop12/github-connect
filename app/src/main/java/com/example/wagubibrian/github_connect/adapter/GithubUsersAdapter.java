@@ -31,7 +31,7 @@ public class GithubUsersAdapter extends RecyclerView.Adapter<GithubUsersAdapter.
     @NonNull
     @Override
     public GithubUsersAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        return new MyViewHolder(layoutInflater.inflate(R.layout.list_card, viewGroup, false), context);
+        return new MyViewHolder(layoutInflater.inflate(R.layout.list_card, viewGroup, false), context, githubUsers);
     }
 
     @Override
@@ -51,12 +51,10 @@ public class GithubUsersAdapter extends RecyclerView.Adapter<GithubUsersAdapter.
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
         private TextView userName;
-        private TextView email;
         private ImageView profileImage;
-        private TextView htmlUrl;
         private ImageView infoIcon;
 
-        public MyViewHolder(@NonNull View itemView, final Context context) {
+        public MyViewHolder(@NonNull View itemView, final Context context, final ArrayList<GithubUsers> githubUsers) {
             super(itemView);
             userName = (TextView)itemView.findViewById(R.id.user_name);
             profileImage = (ImageView)itemView.findViewById((R.id.profile_image));
@@ -67,6 +65,8 @@ public class GithubUsersAdapter extends RecyclerView.Adapter<GithubUsersAdapter.
                 public void onClick(View v) {
                     v.getContext();
                     Intent launchDetail = new Intent(context, DetailActivity.class);
+                    GithubUsers gitUser = githubUsers.get(getAdapterPosition());
+                    launchDetail.putExtra("User", gitUser);
                     launchDetail.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     context.startActivity(launchDetail);
                 }
