@@ -34,13 +34,11 @@ public class GithubUsers implements Parcelable{
         }
     };
 
-    public GithubUsers(String userName, String profileImage, String email, String htmlUrl, String company) {
-
-        this.userName = userName;
-        this.profileImage = profileImage;
-        this.email = email;
-        this.htmlUrl = htmlUrl;
-        this.company = company;
+    public GithubUsers(String userNameValue, String profileImageValue, String emailValue, String htmlUrlValue) {
+        this.userName = userNameValue;
+        this.profileImage = profileImageValue;
+        this.email = emailValue;
+        this.htmlUrl = htmlUrlValue;
     }
 
     public GithubUsers(Parcel source) {
