@@ -43,6 +43,7 @@ allprojects {
         mockwebserverVersion="2.7.0"
         espressoIntentsVersion="3.0.2"
         mockitoCoreVersion="2.1.0"
+
     }
 }
 
