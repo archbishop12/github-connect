@@ -20,12 +20,15 @@ public class GithubUserModelTest {
         String profileImageUrl = "https://growth.search.com";
         String email = "test@gmail.com";
         String htmlUrl = "lubeja.com";
+
         GithubUsers githubUser = new GithubUsers(userName, profileImageUrl, email,  htmlUrl);
+
 
         assertEquals(userName ,githubUser.getUserName());
         assertEquals(profileImageUrl, githubUser.getProfileImage());
         assertEquals(githubUser.getEmail(), email);
         assertEquals(htmlUrl, githubUser.getHtmlUrl());
+
         assertEquals(githubUser.describeContents(), 0);
 
 
@@ -33,6 +36,7 @@ public class GithubUserModelTest {
         githubUser.setProfileImage("https://profile.search.com");
         githubUser.setEmail("changed@gmail.com");
         githubUser.setHtmlUrl("changed.com");
+
         assertNotEquals(userName ,githubUser.getUserName());
         assertNotEquals(profileImageUrl, githubUser.getProfileImage());
         assertNotEquals(githubUser.getEmail(), email);

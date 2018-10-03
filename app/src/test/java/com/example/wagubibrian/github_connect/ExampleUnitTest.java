@@ -32,12 +32,15 @@ public class ExampleUnitTest {
         String profileImageUrl = "https://growth.search.com";
         String email = "test@gmail.com";
         String htmlUrl = "lubeja.com";
+
         GithubUsers githubUser = new GithubUsers(userName, profileImageUrl, email,  htmlUrl);
+
 
         assertEquals(userName ,githubUser.getUserName());
         assertEquals(profileImageUrl, githubUser.getProfileImage());
         assertEquals(githubUser.getEmail(), email);
         assertEquals(htmlUrl, githubUser.getHtmlUrl());
+
         assertEquals(githubUser.describeContents(), 0);
 
 
@@ -45,10 +48,12 @@ public class ExampleUnitTest {
         githubUser.setProfileImage("https://profile.search.com");
         githubUser.setEmail("changed@gmail.com");
         githubUser.setHtmlUrl("changed.com");
+
         assertNotEquals(userName ,githubUser.getUserName());
         assertNotEquals(profileImageUrl, githubUser.getProfileImage());
         assertNotEquals(githubUser.getEmail(), email);
         assertNotEquals(htmlUrl, githubUser.getHtmlUrl());
+
 
     }
 
@@ -57,8 +62,10 @@ public class ExampleUnitTest {
 
         List<GithubUsers> testList = new ArrayList<>();
         List<GithubUsers> testList1 = new ArrayList<>();
+
         GithubUsers githubUser = new GithubUsers("lubeja", "https://growth.search.com", "test@gmail.com", "lubeja.com");
         GithubUsers githubUser1 = new GithubUsers("trap", "https://clap.com", "up@gmail.com", "trap.com");
+
         testList.add(githubUser);
         testList.add(githubUser1);
 
@@ -73,6 +80,7 @@ public class ExampleUnitTest {
         githubUsersResponse.setIncompleteResults(true);
 
         GithubUsers newUser = new GithubUsers("slope", "https://slope.com", "down@gmail.com", "fetch.com");
+
         testList1.add(newUser);
         githubUsersResponse.setResults(testList1);
 

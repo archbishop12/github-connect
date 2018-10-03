@@ -21,8 +21,10 @@ public class GithubUserResponseModelTest {
 
         List<GithubUsers> testList = new ArrayList<>();
         List<GithubUsers> testList1 = new ArrayList<>();
+
         GithubUsers githubUser = new GithubUsers("lubeja", "https://growth.search.com", "test@gmail.com", "lubeja.com");
         GithubUsers githubUser1 = new GithubUsers("trap", "https://clap.com", "up@gmail.com", "trap.com");
+
         testList.add(githubUser);
         testList.add(githubUser1);
 
@@ -37,6 +39,7 @@ public class GithubUserResponseModelTest {
         githubUsersResponse.setIncompleteResults(true);
 
         GithubUsers newUser = new GithubUsers("slope", "https://slope.com", "down@gmail.com", "fetch.com");
+
         testList1.add(newUser);
         githubUsersResponse.setResults(testList1);
 
