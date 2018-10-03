@@ -9,6 +9,7 @@ import com.example.wagubibrian.github_connect.R;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.Mock;
 
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.Espresso.pressBack;
@@ -21,6 +22,9 @@ public class MainActivityTest {
 
     @Rule
     public ActivityTestRule<MainActivity> activity = new ActivityTestRule<MainActivity>(MainActivity.class);
+
+    @Mock
+    MainActivity activityTest;
 
     @Test
     public void clickItemOnRecycler(){
