@@ -3,6 +3,7 @@ package com.example.wagubibrian.github_connect.view;
 import android.app.ProgressDialog;
 import android.graphics.Color;
 import android.os.Parcelable;
+import android.support.design.widget.Snackbar;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -14,6 +15,7 @@ import com.example.wagubibrian.github_connect.R;
 import com.example.wagubibrian.github_connect.adapter.GithubUsersAdapter;
 import com.example.wagubibrian.github_connect.model.GithubUsers;
 import com.example.wagubibrian.github_connect.presenter.GithubPresenter;
+import com.example.wagubibrian.github_connect.utils.NetworkConn;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private Parcelable listState;
     private GithubPresenter githubPresenter;
     private ProgressDialog progressDialog;
+    private NetworkConn networkConn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +49,14 @@ public class MainActivity extends AppCompatActivity {
                 refreshItems();
             }
         });
+
+        networkConn = new NetworkConn();
+
+        if(!networkConn.haveNetworkConnection(MainActivity.this)){
+            Snackbar.make(findViewById(R.id.coordinatorLayout), "NO INTERNET CONNECTION",
+                    Snackbar.LENGTH_LONG)
+                    .show();
+        }
 
         mRecyclerView = (RecyclerView)findViewById(R.id.recycler_view);
         mRecyclerView.setHasFixedSize(true);
