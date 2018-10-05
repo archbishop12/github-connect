@@ -32,12 +32,15 @@ public class ExampleUnitTest {
         String profileImageUrl = "https://growth.search.com";
         String email = "test@gmail.com";
         String htmlUrl = "lubeja.com";
+
         GithubUsers githubUser = new GithubUsers(userName, profileImageUrl, email,  htmlUrl);
+
 
         assertEquals(userName ,githubUser.getUserName());
         assertEquals(profileImageUrl, githubUser.getProfileImage());
         assertEquals(githubUser.getEmail(), email);
         assertEquals(htmlUrl, githubUser.getHtmlUrl());
+
         assertEquals(githubUser.describeContents(), 0);
 
 
@@ -50,6 +53,7 @@ public class ExampleUnitTest {
         assertNotEquals(profileImageUrl, githubUser.getProfileImage());
         assertNotEquals(githubUser.getEmail(), email);
         assertNotEquals(htmlUrl, githubUser.getHtmlUrl());
+
 
     }
 

@@ -88,4 +88,5 @@ dependencies {
     androidTestImplementation ("com.squareup.okhttp:mockwebserver:${project.ext.mockwebserverVersion}")
     androidTestImplementation "com.android.support.test.espresso:espresso-intents:${project.ext.espressoIntentsVersion}"
     androidTestImplementation "org.mockito:mockito-core:${project.ext.mockitoCoreVersion}"
+    implementation "com.android.support:design:${project.ext.designVersion}"
 }

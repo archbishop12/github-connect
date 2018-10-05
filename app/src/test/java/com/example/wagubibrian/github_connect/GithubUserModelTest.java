@@ -20,6 +20,7 @@ public class GithubUserModelTest {
         String profileImageUrl = "https://growth.search.com";
         String email = "test@gmail.com";
         String htmlUrl = "lubeja.com";
+
         GithubUsers githubUser = new GithubUsers(userName, profileImageUrl, email,  htmlUrl);
 
 
