@@ -19,8 +19,8 @@ import static org.junit.Assert.*;
 public class ParcelableTest {
     @Test
     public void testGithubUsersParcelable() {
-
         GithubUsers githubUser = new GithubUsers("lubeja", "https://growth.search.com", "test@gmail.com", "lubeja.com");
+
         assertEquals(githubUser.getUserName(), "lubeja");
 
         Parcel parcel = Parcel.obtain();
